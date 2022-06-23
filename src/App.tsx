@@ -15,6 +15,12 @@ const get = gql`
 interface Lesson {
   id: string
   title: string
+  teacher: Teacher
+}
+
+interface Teacher {
+  name: string
+  bio: string
 }
 
 function App() {
@@ -26,6 +32,7 @@ function App() {
           return (
             <li key={lesson.id}>
               {lesson.title}
+              {lesson.teacher.name}
             </li>
           )
         })
